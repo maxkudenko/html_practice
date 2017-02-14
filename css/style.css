@@ -4,6 +4,8 @@
 
 html, body {
     height: auto;
+	overflow-x: hidden;
+	width: 100%;
 }
 
 body {
@@ -42,6 +44,11 @@ ul {
 a {
     text-decoration: none;
     display: inline-block;
+}
+
+img {
+	display: inline-block;
+	max-width: 100%;
 }
 
 .content-wrapper {
@@ -170,6 +177,19 @@ a {
 
 header {
     padding: 24px 0;
+}
+
+.burger {
+	display: none;
+	float: right;
+	font-size: 24px;
+	line-height: 1;
+	color: #272727;
+}
+
+.burger:before {
+	content: '\f0c9';
+	font-family: 'FontAwesome';
 }
 
 .welcome-block {
@@ -1006,4 +1026,90 @@ header {
 
 .subscribe-block .input-holder button[type="submit"]:hover {
     background: #f43636;
+}
+
+
+/* media queries */
+
+@media screen and (max-width:1140px) {
+	.about-article {
+		position: relative;
+		top: auto;
+		right: auto;
+		margin: 0 auto;
+		transform: none;
+	}
+	
+	.about-block img {
+		display: block;
+		margin: 0 auto;
+	}
+	
+	.content-wrapper, header {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	
+
+	.article-about .inner-content img {
+		display: none;
+	}
+	
+	.article-about .description-part {
+		border-right: none;
+		margin-right: 0;
+		padding-right: 0;
+		max-width: 908px;
+	}
+	
+	.article-about .soc-part {
+		margin-top: 10px;
+		display: block;
+		text-align: center;
+	}
+	
+	.article-about .soc-part li {
+		display: inline-block;
+		padding: 10px;
+	}
+	
+	.work-steps .absolute-block {
+		position: static;
+		margin: 0 auto;
+		max-width: 556px;
+		height: auto;
+	}
+	
+	.focus-block .focus-list li {
+		
+	}
+}
+
+@media screen and (max-width:1024px) {
+	.head-menu ul {
+		position: absolute;
+		top: -100%;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: #fff;
+		z-index: 10;
+		padding: 100px;
+		transition: ease-in-out 0.2s transform;
+	}
+	
+	.head-menu ul.acvtive,
+	.burger:hover + .head-menu ul {
+		transform: translateY(100%);
+	}
+	
+	.head-menu li {
+		display: block;
+		text-align: center;
+		margin: 0 0 15px;
+	}
+	
+	.burger {
+		display: block;
+	}
 }
